@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Nexus Capture",
+  "version": "1.0",
+  "description": "Capture and record live video streams from the current tab.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "downloads",
+    "tabCapture",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://raw.githubusercontent.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  }
+}

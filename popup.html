@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Capture </title>
+    <style>
+        :root {
+            --primary-green: #28a745;
+            --hover-green: #218838;
+            --danger-red: #dc3545;
+            --hover-red: #c82333;
+            --dark-bg: #1f2937;
+            --medium-bg: #374151;
+            --light-bg: #4b5563;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --border-color: #4b5563;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            width: 350px;
+            padding: 20px;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        /* Hide views by default */
+        #main-view, #license-view {
+            display: none;
+        }
+
+        .view-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        h3 {
+            color: var(--text-primary);
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        p {
+            font-size: 14px;
+            text-align: center;
+            color: var(--text-secondary);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .input-field, .btn {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .input-field {
+            background-color: var(--medium-bg);
+            color: var(--text-primary);
+        }
+
+        .input-field::placeholder {
+            color: #9ca3af;
+        }
+
+        .input-field:focus {
+            border-color: var(--primary-green);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.2);
+        }
+
+        .btn {
+            cursor: pointer;
+            font-weight: 600;
+            color: white;
+            border: none;
+            transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        #btn-activate, #btn-start-record {
+            background-color: var(--primary-green);
+        }
+
+        #btn-activate:hover, #btn-start-record:hover {
+            background-color: var(--hover-green);
+        }
+
+        #btn-stop-record {
+            background-color: var(--danger-red);
+        }
+
+        #btn-stop-record:hover {
+            background-color: var(--hover-red);
+        }
+        
+        .btn:disabled {
+            background-color: var(--light-bg);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        #status, #license-status {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 13px;
+            min-height: 18px;
+            color: var(--text-secondary);
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- View for users without a valid license -->
+    <div id="license-view" class="view-container">
+        <h3>Activate Nexus Capture</h3>
+        <p>Enter license key: </p>
+        <input type="text" id="license-key-input" class="input-field" placeholder="Paste your license key here">
+        <button id="btn-activate" class="btn">Activate License</button>
+        <p id="license-status">Your Device ID will appear here.</p>
+    </div>
+
+    <!-- Main view for activated users -->
+    <div id="main-view" class="view-container">
+        <h3>Recording Control</h3>
+        <button id="btn-start-record" class="btn">Start Recording</button>
+        <button id="btn-stop-record" class="btn">Stop Recording</button>
+        <p id="status">Ready to capture this tab.</p>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
