@@ -1,2 +1,2 @@
 # nexus-capture
-lightweight extension for downloading and recording live video in other tabs 
+lightweight extension for downloading and recording live videos in other tabs 
