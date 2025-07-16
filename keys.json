@@ -14,9 +14,9 @@
     },
     {
       "key": "YEARLY-SUB-XYZ-789",
-      "deviceId": null,
+      "deviceId":"fc2a2ac6-e4b7-45b6-a217-0051b46a4755",
       "active": true,
-      "notes": "Unassigned key, ready for a new user"
+     "notes" : "shankmann key"
     }
   ]
 }
